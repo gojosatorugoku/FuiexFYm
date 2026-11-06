@@ -22,18 +22,18 @@ jobs:
         with:
           gradle-version: "8.9"
 
-      - name: Extract project
+      - name: Extract ZIP
         run: |
           unzip -o FUIXEFY-Repaired-Android-Project.zip -d source
 
       - name: Build APK
         run: |
-          cd source
+          cd source/FUIXEFY-Android-Studio
           gradle assembleDebug
 
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
           name: FuiexFY-APK
-          path: source/app/build/outputs/apk/debug/app-
-          debug.apk
+          path: source/FUIXEFY-Android-Studio/app/build/outputs/apk/debug/app-d
+          ebug.apk
